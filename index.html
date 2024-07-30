@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Page</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // URLのクエリパラメータから認証コードを取得
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+        
+        // コードをローカルストレージに保存
+        localStorage.setItem("auth_code", code);
+        
+        // 指定されたURLにリダイレクト
+        window.location.href = "https://yourapp.example.com/oauth2callback?code=" + code;
+    </script>
+    <p>リダイレクト中...</p>
+</body>
+</html>
